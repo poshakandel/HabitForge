@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  /* Tech / Startup Palette - Clean, Professional, Deep */
+  --color-primary: oklch(0.60 0.20 270);
+  /* Deep Indigo */
+  --color-primary-hover: oklch(0.50 0.20 270);
+
+  --color-secondary: oklch(0.70 0.16 150);
+  /* Success Emerald */
+  --color-accent: oklch(0.65 0.20 320);
+  /* Vibrant Pink/Purple */
+
+  --color-background: oklch(0.12 0.02 240);
+  /* Cool Slate Black */
+  --color-surface: oklch(0.16 0.03 240);
+  /* Slate Surface */
+  --color-surface-hover: oklch(0.20 0.03 240);
+
+  --color-text-main: oklch(0.98 0.01 240);
+  /* Crisp White */
+  --color-text-muted: oklch(0.65 0.04 240);
+  /* Slate Grey */
+
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-glow: 0 0 20px -5px var(--color-primary / 0.3);
+}
+
+:root {
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Subtle mesh gradient for depth */
+  background-image:
+    radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(168, 85, 247, 0.05) 0%, transparent 50%);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Modern Card System */
+.modern-card {
+  background: var(--color-surface);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  box-shadow: var(--shadow-card);
+  transition: all 0.2s ease-in-out;
+}
+
+.modern-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+}
+
+.modern-input {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-text-main);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.modern-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary / 0.2);
+  outline: none;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px var(--color-primary / 0.2);
+  transition: all 0.2s;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px var(--color-primary / 0.4);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Sidebar Active State */
+.nav-item-active {
+  background: linear-gradient(90deg, var(--color-primary) 0%, transparent 100%);
+  border-right: 3px solid var(--color-accent);
+}
